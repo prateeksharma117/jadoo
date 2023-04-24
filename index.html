@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <style>
+        .swiper {
+            width: 220px;
+            height: auto;
+        }
+
+        .swiper-slide {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .swiper-slide:nth-child(1n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(2n) {
+            background-color: rgb(255, 255, 255);
+            ;
+        }
+
+        .swiper-slide:nth-child(3n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(4n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(5n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(6n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(7n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(8n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(9n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .swiper-slide:nth-child(10n) {
+            background-color: rgb(255, 255, 255);
+        }
+
+
+        /* new slider */
+
+
+        .img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            max-height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        /* STYLE HTML ELEMENTS */
+        #title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        #contain-image {
+            position: relative;
+            width: 100%;
+            height: 15rem;
+            box-shadow: 0rem 0.7rem 2rem rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .img {
+            display: none;
+        }
+
+        #contain-button {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .button:hover,
+        .button:focus {
+            opacity: 0.5;
+            transition: opacity ease-in-out 0.1s;
+        }
+
+        .active {
+            opacity: 0.5;
+        }
+
+        #signature {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body class="">
+
+    <nav class="p-2 bg-opacity-0 md:flex md:items-center justify-between ">
+        <div class="flex justify-between items-center">
+            <span>
+                <h1 class="text-3xl ml-2 font-bold animate-jello">JADOO</h1>
+            </span>
+            <span class="text-3xl cursor-pointer md:hidden block">
+                <ion-icon name="menu" onclick="menu(this)"></ion-icon>
+            </span>
+        </div>
+
+        <ul
+            class="md:flex md:items-center z-[1] md:z-auto md:static absolute bg bg-[#fff] md:bg-opacity-0 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            <li class="md:hidden lg:block mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500" href="">Destinations</a></li>
+            <li class="md:hidden lg:block mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500" href="">Hotels</a></li>
+            <li class="mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500" href="">Flights</a></li>
+            <li class="mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500" href="">Bookings</a></li>
+            <li class="mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500" href="">Login</a></li>
+            <li class="mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500 xl:border xl:border-1 xl:border-black xl:pl-5 xl:pr-5 xl:pt-1 xl:pb-2 rounded-md"
+                    href="">Sign up</a></li>
+            <li class="mx-4 my-6 md:my-0 md:text-sm"><a
+                    class="text-lg  font-normal hover:underline text-black duration-500 flex items-center" href="">EN
+                    <img class="h-2 mx-1" src="./pic/down-arrow.png" alt=""></a></li>
+        </ul>
+    </nav>
+    <div class="mx-3 mt-10 md:grid md:grid-cols-2 md:items-center">
+        <div class="left md:mx-10">
+            <p class="text-[#e06951] w-3/4  lg:text-xl ">BEST DESTINATIONS AROUND THE WORLD.</p>
+            <h1 class="text-3xl w-3/2 font-semibold font-sans mt-8 lg:text-5xl ">Travel, enjoy and live a new
+                and full life</h1>
+            <p class="font-thin w-3/4 mt-5 text-xs lg:text-sm ">Built Wicket longer admire do barton vanity
+                itself do in it. Preferred
+                to sportsmen it engrossed listening. Park gate sell they west hard
+                for the.</p>
+            <div class="flex items-center">
+                <button
+                    class=" shadow-xl shadow-[#c8d1cb] text-white font-bold text-sm p-1.5 bg-[#0f4c93] mt-10 rounded-md mt-10 lg:p-2 lg:text-sm">Find
+                    out more</button>
+                <img class="cursor-pointer h-10 mt-10 mx-5 lg:h-10" src="./pic/play.png" alt="">
+                <p class="cursor-pointer mt-10 lg:text-lg">Play Demo</p>
+            </div>
+        </div>
+        <div class="right ">
+            <img class="mt-3 mb-10 mb-5 md:mt-5 " src="./pic/model.png" alt="">
+        </div>
+    </div>
+
+    <h1 class="text-2xl text-center mt-5 font-bold md:text-3xl">We Offer Best Services</h1>
+
+
+    <div class="mt-7 md:grid md:grid-cols-2 lg:grid-cols-4">
+        <div class="shadow-[#727272] shadow-xl h-auto p-5 mx-10  lg:mx-2 bg-[#fff] rounded-3xl mt-5">
+            <img class="h-20 mx-auto" src="./pic/cloudy.png" alt="">
+            <h3 class="text-black text-center mt-5 text-lg font-bold">Calculated Weather</h3>
+            <p class="text-black text-center mt-3">Built Wicket longer
+                admire do barton vanity
+                itself do in it.
+            </p>
+        </div>
+
+        <div class="shadow-[#727272] shadow-xl h-auto p-5 mx-10  lg:mx-2 bg-[#fff] rounded-3xl mt-5">
+            <img class="h-20 mx-auto" src="./pic/airplane.png" alt="">
+            <h3 class="text-black text-center mt-5 text-lg font-bold">Best Flights</h3>
+            <p class="text-black text-center mt-3">Engrossed listening.
+                Park gate sell they west
+                hard for the.
+            </p>
+        </div>
+
+        <div class="shadow-[#727272] shadow-xl h-auto p-5 mx-10 lg:mx-2 bg-[#fff] rounded-3xl mt-5">
+            <img class="h-20 mx-auto" src="./pic/mike.png" alt="">
+            <h3 class="text-black text-center mt-5 text-lg font-bold">Local Events</h3>
+            <p class="text-black text-center mt-3">Barton vanity itself do in
+                it. Preferd to men it
+                engrossed listening
+            </p>
+        </div>
+
+        <div class="shadow-[#727272] shadow-xl h-auto p-5 mx-10 lg:mx-2 bg-[#fff] rounded-3xl mt-5">
+            <img class="h-20 mx-auto" src="./pic/gear.png" alt="">
+            <h3 class="text-black text-center mt-5 text-lg font-bold">Customization</h3>
+            <p class="text-black text-center mt-3">We deliver outsourced
+                aviation services for
+                military customers
+            </p>
+        </div>
+    </div>
+
+    <p class="text-gray-500 font-thin text-sm text-center mt-10">Top Selling</p>
+    <h1 class="text-3xl text-center mt-5 font-bold md:text-4xl">Top Destinations</h1>
+
+
+    <div class="md:grid md:grid-cols-2">
+        <div class="swiper mySwiper mt-5">
+            <div class="swiper-wrapper ">
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/427679/pexels-photo-427679.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">London,UK</p>
+                        <p class="font-bold">$5,42k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">10 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Bali, Indonesia</p>
+                        <p class="font-bold">$2,5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">14 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Paris, France</p>
+                        <p class="font-bold">$2,4k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">12 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/4039921/pexels-photo-4039921.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">New York City, USA</p>
+                        <p class="font-bold">$2,6k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/236517/pexels-photo-236517.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Bangkok, Thailand</p>
+                        <p class="font-bold">$0.5,1.5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper mt-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/2845013/pexels-photo-2845013.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Sydney, Australia</p>
+                        <p class="font-bold">$2,5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">10 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/2337920/pexels-photo-2337920.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Tokyo, Japan</p>
+                        <p class="font-bold">$2,5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">14 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/259447/pexels-photo-259447.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">CT, South Africa</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">12 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Rome, Italy</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Barcelona, Spain</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper mt-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/4023345/pexels-photo-4023345.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Cancun, Mexico</p>
+                        <p class="font-bold">$1,2k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">10 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/1959065/pexels-photo-1959065.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Rio de Janeiro, Brazil</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">14 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/1470502/pexels-photo-1470502.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Dubai, UAE</p>
+                        <p class="font-bold">$2,5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">12 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/4319881/pexels-photo-4319881.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Maui, Hawaii</p>
+                        <p class="font-bold">$3,6k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/208701/pexels-photo-208701.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Venice, Italy</p>
+                        <p class="font-bold">$2,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">13 day trip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="swiper mySwiper mt-5">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/14247658/pexels-photo-14247658.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Jaipur, India</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">10 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/237211/pexels-photo-237211.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Seoul, South Korea</p>
+                        <p class="font-bold">$2,4k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">14 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/5625928/pexels-photo-5625928.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Stockholm, Sweden</p>
+                        <p class="font-bold">$3,5k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">12 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Lima, Peru</p>
+                        <p class="font-bold">$1,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">15 day trip</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide shadow-[#727272] shadow-2xl rounded-xl">
+                    <img class="w-full h-44"
+                        src="https://images.pexels.com/photos/2404046/pexels-photo-2404046.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
+                    <div class="flex items-center mx-2 my-2">
+                        <p class="mr-5">Marrakech, Morocco</p>
+                        <p class="font-bold">$2,3k</p>
+                    </div>
+                    <div class="flex items-center mx-2 my-2">
+                        <img class="h-4 mr-5" src="./pic/paper-plane.png" alt="">
+                        <p class="font-semibold">13 day trip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="md:grid grid-cols-2 items-center mt-10 lg:ml-10">
+        <div class="left ml-10">
+            <p class="text-gray-500 font-thin text-sm mt-5">Easy and Fast</p>
+            <h1 class="text-3xl mt-5 font-bold md:text-4xl">Book your next trip in 3 easy steps</h1>
+            <div class="mt-10 flex items-center">
+                <img class="h-10" src="./pic/destination.png" alt="">
+                <p class="font-semibold mx-4">Choose Destination: Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Urna, tortor tempus.
+                </p>
+            </div>
+
+            <div class="mt-10 flex items-center">
+                <img class="h-10" src="./pic/cashlesspayment.png" alt="">
+                <p class="font-semibold mx-4">Make Payment:
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Uma, tortor tempus.
+                </p>
+            </div>
+
+            <div class="mt-10 flex items-center">
+                <img class="h-10" src="./pic/airport.png" alt="">
+                <p class="font-semibold mx-4">Reach Airport: on Selected Date
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Uma, tortor tempus.
+                </p>
+            </div>
+        </div>
+        <div class="right mt-5 mx-3 mb-5 lg:ml-10">
+            <div class="mx-10 bg-white p-4 md:w-64 h-auto shadow-[#727272] shadow-2xl rounded-[2rem] lg:w-52">
+                <img class="rounded-[1.5rem] w-full h-36 lg:h-24"
+                    src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="">
+                <h1 class="font-bold mt-5">Trip To Greece</h1>
+                <p class="font-thin text-sm text-[#646567]">14-29 June | by Robin Josh</p>
+                <div class="mt-3 flex items-center">
+                    <img class="h-7 p-2 bg-[#e3e0e3] rounded-full mr-3" src="./pic/leaf.png" alt="">
+                    <img class="h-7 p-2 bg-[#e3e0e3] rounded-full mr-3" src="./pic/apartment.png" alt="">
+                    <img class="h-7 p-2 bg-[#e3e0e3] rounded-full mr-3" src="./pic/paper-plane.png" alt="">
+                </div>
+                <div class="flex justify-between items-center">
+                    <p class="font-semibold text-lg text-[#646567] mt-8">24 People going</p>
+                    <img class="h-5 mt-8" src="./pic/heart.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <p class="text-black mx-5 font-bold text-2xl mt-10">TESTIMONIALS</p>
+    <div class="swiper-container slider1">
+        <main id="main" role="main">
+            <section id="image-section">
+                <div class="container">
+                    <article id="contain-image">
+                        <img src="https://images.pexels.com/photos/4552990/pexels-photo-4552990.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img1">
+                        <img src="https://images.pexels.com/photos/1188470/pexels-photo-1188470.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img2">
+                        <img src="https://images.pexels.com/photos/8760675/pexels-photo-8760675.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img3">
+                        <img src="https://images.pexels.com/photos/672531/pexels-photo-672531.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img4">
+                        <img src="https://images.pexels.com/photos/5225247/pexels-photo-5225247.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img5">
+                        <img src="https://images.pexels.com/photos/6040182/pexels-photo-6040182.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img6">
+                        <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Image" class="img" id="img7">
+                        <div id="contain-button">
+                            <ion-icon name="radio-button-on" class="button" id="button1"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button2"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button3"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button4"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button5"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button6"></ion-icon>
+                            <ion-icon name="radio-button-on" class="button" id="button7"></ion-icon>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <p class="text-black mt-5 ml-5 font-bold text-2xl">PARTNERS</p>
+        <div class="mx-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
+            <img class="h-8 mt-10" src="./pic/axon.png" alt="">
+            <img class="h-8 mt-10" src="./pic/JetstarAirways.png" alt="">
+            <img class="h-8 mt-10" src="./pic/expedialogo.png" alt="">
+            <img class="h-8 mt-10" src="./pic/AlitaliaLogo.png" alt="">
+            <img class="h-8 mt-10" src="./pic/QantasLogo.png" alt="">
+        </div>
+
+
+        <div class="mt-10 mb-10 p-2 h-auto bg-[#f4f4f7]">
+            <div class="bg-white h-auto my-5 shadow-lg shadow-[#727272] md:w-3/4 md:mx-auto lg:w-1/2">
+                <p class="font-semibold p-2 text-xs">
+                    Dear Travel Enthusiast,<br><br>
+
+                    Are you looking for the ultimate guide to your next adventure? Look no further than our travel
+                    website! From exotic destinations to hidden gems, our team of experienced travelers has curated the
+                    best recommendations for your next trip. <br><br>
+
+                    By subscribing to our website, you'll receive exclusive access to our latest travel guides, insider
+                    tips, and special offers. Plus, you'll be the first to know about our upcoming adventures and
+                    events. <br><br>
+
+                    Don't miss out on the chance to explore the world with us. Subscribe now and let us help you plan
+                    your next unforgettable journey! <br><br>
+
+                    Sincerely, JADOO
+                </p>
+            </div>
+            <div class="flex flex-row justify-center items-center mb-5">
+                <input class="p-[8px] rounded-md" type="text" placeholder="Your Email">
+                <button class="mx-2 p-[8px] rounded-md bg-[#ff8f6d] font-semibold">SUBSCRIBE</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="p-2 md:p-5 mt-20 bg-[#f4f4f7] md:grid md:grid-cols-4 lg:grid-cols-5">
+            <div class="ml-2 mt-8">
+                <h1 class="text-3xl font-bold">JADOO.</h1>
+                <p class="w-3/4 text-sm font-thin mt-2">Book your trip in minute, get full
+                    Control for much longer.
+                    </p>
+            </div>
+                <div class="ml-2">
+                    <h1 class="text-xl font-semibold mt-8">Company</h1>
+                    <ul class="mt-3 space-y-4">
+                        <li class="hover:underline">About</li>
+                        <li class="hover:underline">Careers</li>
+                        <li class="hover:underline">Mobile</li>
+                    </ul>
+                </div>
+
+                <div class="ml-2">
+                    <h1 class="text-xl font-semibold mt-8">Contact</h1>
+                    <ul class="mt-3 space-y-4">
+                        <li class="hover:underline">Help/FAQ</li>
+                        <li class="hover:underline">Press</li>
+                        <li class="hover:underline">Affilates</li>
+                    </ul>
+                </div>
+
+                <div class="ml-2">
+                    <h1 class="text-xl font-semibold mt-8">More</h1>
+                    <ul class="mt-3 space-y-4">
+                        <li class="hover:underline">Airline fees</li>
+                        <li class="hover:underline">Airline</li>
+                        <li class="hover:underline">Low fare tips</li>
+                    </ul>
+                </div>
+
+
+            <div class="ml-2">
+                <section class="flex space-x-3 mt-10">
+                    <img class="h-8 " src="./pic/facebook.png" alt="">
+                    <img class="h-8 " src="./pic/instagram.png" alt="">
+                    <img class="h-8 " src="./pic/twitter.png" alt="">
+                </section>
+                <p class="mt-5 font-semibold text-gray-400">Discover our app</p>
+                <div class="flex space-x-3 mt-5">
+                <img class="h-8 " src="./pic/googleplay.png" alt="">
+                <img class="h-8 " src="./pic/appleappstore.png" alt="">
+            </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <script>
+            function menu(e) {
+                let list = document.querySelector('ul');
+                e.name === "menu" ? (e.name = "close", list.classList.add("top-[70px]"), list.classList.add("opacity-100")) : (e.name = "menu", list.classList.remove("top-[70px]"), list.classList.remove("opacity-100"))
+            }
+
+            var swiper = new Swiper(".mySwiper", {
+                effect: "cards",
+                grabCursor: true,
+            });
+
+            let n = 0;
+
+            function slide() {
+                const images = document.getElementsByClassName("img");
+                const button = document.getElementsByClassName("button");
+
+                for (let i = 0; i < images.length; i++) {
+                    images[i].style = "display:none";
+                }
+                for (let i = 0; i < button.length; i++) {
+                    button[i].className = button[i].className.replace(" active", "");
+                }
+
+                n++;
+                if (n > images.length) {
+                    n = 1;
+                }
+
+                images[n - 1].style = "display:block";
+                button[n - 1].className += " active";
+
+                setTimeout(slide, 3000);
+            }
+
+            slide();
+
+// CREDIT: https://w3schools.com - HOW TO SECTION
+
+        </script>
+
+</body>
+
+</html>
